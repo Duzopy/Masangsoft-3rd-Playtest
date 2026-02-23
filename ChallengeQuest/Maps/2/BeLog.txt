@@ -1,0 +1,29 @@
+Starting BSP Export...
+object Plane001 : Plane001: 260 ver / 266 face 
+object hnav_0 : hnav_0: 100 ver / 64 face 
+NaviMesh: 100 ver / 128 face 
+RSBsp Info : 266 faces
+Scene Dimension ( 2000.0 2000.0 1500.0 )
+Export Objects.
+Export description.. 
+Saving Source Data.
+CSG union - 1 objects
+construct object subtree Plane001 ( 266 source polygon ) : total 23 faces splitted 50 leaf nodes 207 nodes 574 polygons
+0 faces eliminated. (solid)
+266 source polygons remain
+optimized 167 polygons remain
+Generating Convex polygons...
+Optimize Polygon 266 -> 167 
+Constructing Collision BspTree. ( 167 source polygons )
+Collision Bsp Info : total 347 faces splitted 50 leaf nodes 350 nodes 898 polygons
+Constructing OcTree. ( 167 source polygons )
+Octree Info : total 0 faces splitted 1 leaf nodes 1 nodes 167 polygons
+Constructing BspTree. ( 167 source polygons )
+RSBsp Info : total 59 faces splitted 49 leaf nodes 97 nodes 226 polygons
+Constructing Bsp Bounding Volumes.
+Saving Bsp information.
+C:\Users\ehswns\Desktop\New Slash\testmap\2\2.RS file saved
+C:\Users\ehswns\Desktop\New Slash\testmap\2\2.RS.bsp file saved
+C:\Users\ehswns\Desktop\New Slash\testmap\2\2.RS.col file saved
+Exporting takes 0 minutes and      2 seconds.
+Done.

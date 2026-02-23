@@ -1,0 +1,11 @@
+{
+	"title"											: "GunZ: The Duel",
+	"executable"									: "Gunz.exe",
+	"productid"										: "1d70a34ddbea424ea46fc275223756c0",
+	"sandboxid"										: "accc80b1597c404a977a1772ae8d731c",
+	"deploymentid"									: "c5503c3e74d7486eb89f900a78ec3d18",
+	"requested_splash"								: "EasyAntiCheat/Title.png",
+	"wait_for_game_process_exit"					: "false",
+	"hide_bootstrapper"								: "false",
+	"hide_gui"										: "false"
+}

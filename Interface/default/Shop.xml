@@ -1,0 +1,2896 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<XML ID="Shop">
+	<Schema xmlns="MaietData" xmlns:dt="MaietDataTypes" />
+
+<!--
+   Shop 화면 구성
+   
+   Last Update : 29.NOV.2004
+   Editor      : Lim Dong Hwan
+-->
+
+
+<!-- 프레임 생성 : Shop -->
+	<FRAME item="Shop">
+		<FRAMELOOK>NullFrameLook</FRAMELOOK>
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>1920</W>
+			<H>1080</H>
+		</BOUNDS>
+		<TITLEBAR>false</TITLEBAR>
+		<RESIZABLE>false</RESIZABLE>
+		<FOCUSABLE>false</FOCUSABLE>
+		<VISIBLE>false</VISIBLE>
+		<FADEENABLE>false</FADEENABLE>
+	</FRAME>
+	
+	<!-- 상점 배경	-->
+	<PICTURE item="Shop_BackGround" parent="Shop">
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>1920</W>
+			<H>1080</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>Shop_Background.png</BITMAP>
+	</PICTURE>
+			
+	<!-- CHARACTERVIEW : 캐릭터 표시창 -->
+	<CHARACTERVIEW item="EquipmentInformationShop" parent="Shop">
+		<BOUNDS>
+			<X>1100</X>
+			<Y>100</Y>
+			<W>820</W>
+			<H>900</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLEEQUIPMENT>true</VISIBLEEQUIPMENT>
+		<ENABLEROTATEZOOM>
+			<ROTATE>true</ROTATE>
+			<ZOOM>true</ZOOM>
+		</ENABLEROTATEZOOM>
+	</CHARACTERVIEW>
+		
+	<TEXTAREA item="Shop_ItemTitle" parent="Shop">
+		<BOUNDS>
+			<X>953</X>
+			<Y>175</Y>
+			<W>309</W>
+			<H>50</H>
+		</BOUNDS>
+		<TEXTCOLOR>
+			<R>222</R>
+			<G>225</G>
+			<B>230</B>
+		</TEXTCOLOR>		
+		<EDITABLE>false</EDITABLE>
+		<FONT>FONTb21b</FONT>
+		<SCROLLBAR>false</SCROLLBAR>
+	</TEXTAREA>
+	
+	<PICTURE item="Shop_ItemInfoBG" parent="Shop">
+		<BOUNDS>
+			<X>953</X>
+			<Y>246</Y>
+			<W>310</W>
+			<H>24</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>RelaySelect.png</BITMAP>
+	</PICTURE>
+	
+	<LABEL item="Shop_Information" parent="Shop_ItemInfoBG">
+		<BOUNDS>
+			<X>15</X>
+			<Y>0</Y>
+			<W>150</W>
+			<H>25</H>
+		</BOUNDS>
+		<TEXTCOLOR>
+			<R>229</R>
+			<G>230</G>
+			<B>231</B>
+		</TEXTCOLOR>
+		<TEXTALIGN>
+			<HALIGN>left</HALIGN>
+			<VALIGN>center</VALIGN>
+		</TEXTALIGN>
+		<VISIBLE>false</VISIBLE>
+		<TEXT>STR:UI_EQUIPMENT_TOOLTIP_07</TEXT>
+		<FONT>FONTa14</FONT>
+	</LABEL>
+	
+	<TEXTAREA item="Shop_ItemInfo" parent="Shop">
+		<TEXTCOLOR>
+			<R>172</R>
+			<G>177</G>
+			<B>184</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>951</X>
+			<Y>286</Y>
+			<W>309</W>
+			<H>100</H>
+		</BOUNDS>		
+		<EDITABLE>false</EDITABLE>
+		<FONT>FONTa11</FONT>
+		<SCROLLBAR>false</SCROLLBAR>
+	</TEXTAREA>	
+	
+	<!-- TOGGLEBUTTON : 성별 전환 버튼 -->
+	<TOGGLEBUTTON item="CashEquipmentListChangeSex" parent="Shop">
+		<BOUNDS>
+			<X>1752</X>
+			<Y>280</Y>
+			<W>44</W>
+			<H>44</H>
+		</BOUNDS>
+		<STRETCH/>
+		<ICONRECT>
+			<X>10</X>
+			<Y>10</Y>
+			<W>26</W>
+			<H>26</H>
+		</ICONRECT>
+		<BITMAP type="firstUp">MaleIcon.png</BITMAP>
+		<BITMAP type="firstOver">MaleIcon.png</BITMAP>
+		<BITMAP type="firstDown">MaleIcon.png</BITMAP>
+		<BITMAP type="secondUp">FemaleIcon.png</BITMAP>
+		<BITMAP type="secondOver">FemaleIcon.png</BITMAP>
+		<BITMAP type="secondDown">FemaleIcon.png</BITMAP>
+		<BITMAP type="bgDefault">Button_Default.png</BITMAP>
+		<BITMAP type="bgOver">Button_Over.png</BITMAP>
+		<DISABLETOOLTIP/>
+		<STRETCH/>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</TOGGLEBUTTON>
+	
+	<LABEL item="Shop_gender" parent="Shop">
+		<BOUNDS>
+			<X>1725</X>
+			<Y>336</Y>
+			<W>100</W>
+			<H>20</H>
+		</BOUNDS>
+		<FONT>FONTa11</FONT>
+		<TEXT>STR:UI_CC_03</TEXT>
+		<TEXTALIGN>
+			<HALIGN>center</HALIGN>
+			<VALIGN>center</VALIGN>
+		</TEXTALIGN>
+	</LABEL>
+	
+	<ICONBUTTON item="Shop_EquipResetButton" parent="Shop">
+		<BOUNDS>
+			<X>1752</X>
+			<Y>164</Y>
+			<W>44</W>
+			<H>44</H>
+		</BOUNDS>
+		<ICONRECT>
+			<X>10</X>
+			<Y>10</Y>
+			<W>26</W>
+			<H>26</H>
+		</ICONRECT>
+		<BITMAP type="bg" state="base">Button_Default.png</BITMAP>
+		<BITMAP type="bg" state="over">Button_Over.png</BITMAP>
+		<BITMAP type="icon" state="base">ResetIcon.png</BITMAP>
+		<OUTLINETHICKNESS>0</OUTLINETHICKNESS>
+		<STRETCH/>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+	
+	<LABEL item="Shop_reset" parent="Shop">
+		<BOUNDS>
+			<X>1677</X>
+			<Y>219</Y>
+			<W>200</W>
+			<H>20</H>
+		</BOUNDS>
+		<FONT>FONTa11</FONT>
+		<TEXTALIGN>
+			<HALIGN>center</HALIGN>
+			<VALIGN>center</VALIGN>
+		</TEXTALIGN>
+		<TEXT>STR:UI_SHOP_46</TEXT>
+	</LABEL>
+<!-- 장비 목록 -->
+	<!-- EQUIPMENTLISTBOX : 상점에 있는 물건 -->
+	<EQUIPMENTLISTBOX item="AllEquipmentList" parent="Shop">
+		<LISTBOXLOOK>EquipListBoxLook</LISTBOXLOOK>
+		<THUMBLOOK>CustomRenewalThumbLook</THUMBLOOK>
+		<BOUNDS>
+			<X>390</X>
+			<Y>163</Y>
+			<W>526</W>
+			<H>889</H>
+		</BOUNDS>
+		<VISIBLE>true</VISIBLE>
+		<ITEMSPACE>11</ITEMSPACE>
+		<ITEMSPACEH>15</ITEMSPACEH>
+		<ROWNUM>5.5</ROWNUM>
+		<NUMCOLUMN>2</NUMCOLUMN>
+		<NEWSCROLLBAR>true</NEWSCROLLBAR>
+		<VIEWTYPE>shop</VIEWTYPE>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+	</EQUIPMENTLISTBOX>
+	
+	<!-- EQUIPMENTLISTBOX : 내가 가지고 있는 물건 	-->
+	<EQUIPMENTLISTBOX item="MyAllEquipmentList" parent="Shop">
+		<LISTBOXLOOK>EquipListBoxLook</LISTBOXLOOK>
+		<THUMBLOOK>CustomRenewalThumbLook</THUMBLOOK>
+		<BOUNDS>
+			<X>390</X>
+			<Y>163</Y>
+			<W>526</W>
+			<H>889</H>
+		</BOUNDS>
+		<VISIBLE>true</VISIBLE>
+		<ITEMSPACE>11</ITEMSPACE>
+		<ITEMSPACEH>15</ITEMSPACEH>
+		<ROWNUM>5.5</ROWNUM>
+		<NUMCOLUMN>2</NUMCOLUMN>
+		<NEWSCROLLBAR>true</NEWSCROLLBAR>
+		<VIEWTYPE>shop</VIEWTYPE>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+	</EQUIPMENTLISTBOX>
+	
+	
+	<!-- EQUIPMENTLISTBOX : 캐쉬샵 아이템 -->
+	<EQUIPMENTLISTBOX item="CashEquipmentList" parent="Shop">
+		<LISTBOXLOOK>EquipListBoxLook</LISTBOXLOOK>
+		<THUMBLOOK>CustomRenewalThumbLook</THUMBLOOK>
+		<BOUNDS>
+			<X>390</X>
+			<Y>207</Y>
+			<W>526</W>
+			<H>845</H>
+		</BOUNDS>
+		<VISIBLE>true</VISIBLE>
+		<ITEMSPACE>11</ITEMSPACE>
+		<ITEMSPACEH>15</ITEMSPACEH>
+		<ROWNUM>5.2</ROWNUM>
+		<NUMCOLUMN>2</NUMCOLUMN>
+		<NEWSCROLLBAR>true</NEWSCROLLBAR>
+		<VIEWTYPE>shop</VIEWTYPE>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+	</EQUIPMENTLISTBOX>
+		
+	<!--DISCOUNTLISTBOX : 할인 아이템 -->
+	<EQUIPMENTLISTBOX item="DiscountItemList" parent="Shop">
+		<LISTBOXLOOK>EquipListBoxLook</LISTBOXLOOK>
+		<THUMBLOOK>CustomRenewalThumbLook</THUMBLOOK>
+		<BOUNDS>
+			<X>390</X>
+			<Y>163</Y>
+			<W>526</W>
+			<H>889</H>
+		</BOUNDS>
+		<VISIBLE>true</VISIBLE>
+		<ITEMSPACE>11</ITEMSPACE>
+		<ITEMSPACEH>15</ITEMSPACEH>
+		<ROWNUM>5.5</ROWNUM>
+		<NUMCOLUMN>2</NUMCOLUMN>
+		<NEWSCROLLBAR>true</NEWSCROLLBAR>
+		<VIEWTYPE>shop</VIEWTYPE>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+	</EQUIPMENTLISTBOX>
+	
+		<!-- ZACCORDION : 룸리스트 필터링 아코디언 -->
+	<ZACCORDION item="Shop_FilterAccordion" parent="Shop">
+		<BOUNDS>
+			<X>52</X>
+			<Y>163</Y>
+			<W>290</W>
+			<H>811</H>
+		</BOUNDS>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<INTERVAL type="header">4</INTERVAL>
+		<INTERVAL type="item">3</INTERVAL>
+		<MULTISELECTITEM/>
+		<RECT type="header">
+			<X>0</X>
+			<Y>0</Y>
+			<W>290</W>
+			<H>44</H>
+		</RECT>
+		<RECT type="headerContent">
+			<X>23</X>
+			<Y>13</Y>
+			<W>100</W>
+			<H>18</H>
+		</RECT>
+		<RECT type="headerIcon">
+			<X>259</X>
+			<Y>17</Y>
+			<W>14</W>
+			<H>10</H>
+		</RECT>
+		<RECT type="item">
+			<X>20</X>
+			<Y>0</Y>
+			<W>270</W>
+			<H>44</H>
+		</RECT>
+		<RECT type="itemContent">
+			<X>21</X>
+			<Y>13</Y>
+			<W>200</W>
+			<H>18</H>
+		</RECT>
+		<RECT type="ScrollBar">
+			<X>349</X>
+			<Y>163</Y>
+			<W>6</W>
+			<H>811</H>
+		</RECT>
+		<BITMAP type="item" state="on">Lobby_FilterAttribute_On.png</BITMAP>
+		<BITMAP type="item" state="over">Lobby_FilterAttribute_Over.png</BITMAP>
+		<BITMAP type="header" state="on">Lobby_FilterAttribute_On.png</BITMAP>
+		<BITMAP type="header" state="over">Lobby_FilterAttribute_Over.png</BITMAP>
+		<BITMAP type="headerIcon" state="on">Lobby_FilterListArrow_Down.png</BITMAP>
+		<BITMAP type="headerIcon" state="off">Lobby_FilterListArrow_Up.png</BITMAP>
+		<COLOR type="header" part="background">
+			<R>26</R>
+			<G>25</G>
+			<B>26</B>
+		</COLOR>
+		<COLOR type="header" part="outline">
+			<R>63</R>
+			<G>65</G>
+			<B>76</B>
+		</COLOR>
+		<COLOR type="header" part="font">
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</COLOR>
+		<COLOR type="item" part="font" state="on">
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</COLOR>
+		<COLOR type="item" part="font" state="off">
+			<R>109</R>
+			<G>109</G>
+			<B>118</B>
+		</COLOR>
+		<COLOR type="scrollbar" part="background">
+			<R>49</R>
+			<G>46</G>
+			<B>46</B>
+		</COLOR>
+		<COLOR type="scrollbar" part="handle">
+			<R>148</R>
+			<G>145</G>
+			<B>145</B>
+		</COLOR>
+		<FONT type="header">FONTa16</FONT>
+		<FONT type="item">FONTa14</FONT>
+		<ADDHEADER>   <!-- 전체 보기 -->
+			<FILTERNAME>STR:UI_SHOP_LIST_01_01</FILTERNAME>			
+			<DEFITEMON/>
+			<BLOCKALLOFF/>
+		</ADDHEADER>
+		<ADDHEADER>   <!-- 방어구 -->
+			<FILTERNAME>STR:UI_SHOP_LIST_01_04</FILTERNAME>
+			<ADDITEM>STR:UI_SHOP_LIST_05_01</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_02_01</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_02_02</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_02_03</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_02_04</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_02_05</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_02_06</ADDITEM>
+			<DEFITEMON/>
+			<BLOCKALLOFF/>
+		</ADDHEADER>
+		<ADDHEADER>   <!-- 근접 무기 -->
+			<FILTERNAME>STR:UI_SHOP_LIST_01_02</FILTERNAME>
+			<ADDITEM>STR:UI_SHOP_LIST_05_01</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_03_01</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_03_02</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_03_03</ADDITEM>
+			<DEFITEMON/>
+			<BLOCKALLOFF/>
+		</ADDHEADER>
+		<ADDHEADER>   <!-- 원거리 무기 -->
+			<FILTERNAME>STR:UI_SHOP_LIST_01_03</FILTERNAME>
+			<ADDITEM>STR:UI_SHOP_LIST_05_01</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_04_01</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_04_02</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_04_03</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_04_04</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_04_05</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_04_06</ADDITEM>
+			<ADDITEM>STR:UI_SHOP_LIST_04_07</ADDITEM>
+			<DEFITEMON/>
+			<BLOCKALLOFF/>
+		</ADDHEADER>
+		<ADDHEADER>   <!-- 아이템 -->
+			<FILTERNAME>STR:UI_SHOP_LIST_01_08</FILTERNAME>
+			<ADDITEM>STR:UI_SHOP_LIST_01_08</ADDITEM>
+			<DEFITEMON/>
+			<BLOCKALLOFF/>
+		</ADDHEADER>
+		<ADDHEADER>   <!-- 기타 -->
+			<FILTERNAME>STR:UI_SHOP_LIST_01_07</FILTERNAME>
+			<ADDITEM>STR:UI_SHOP_LIST_01_07</ADDITEM>
+			<DEFITEMON/>
+			<BLOCKALLOFF/>
+		</ADDHEADER>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+	</ZACCORDION>
+	
+	<!-- Edit : 아이템 검색 -->
+	<ZEDIT item="Shop_ItemSearchBar" parent="Shop">
+		<BOUNDS>
+			<X>395</X>
+			<Y>163</Y>
+			<W>300</W>
+			<H>34</H>
+		</BOUNDS>
+		<GUIDETEXT>STR:UI_EQUIPMENT_20</GUIDETEXT>
+		<COLOR type="frame">
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+			<A>255</A>
+		</COLOR>
+		<BITMAP type="frame">InvenSearch.png</BITMAP>
+		<TABRECT>
+			<X>0</X>
+			<Y>0</Y>
+			<W>47</W>
+		</TABRECT>
+		<FONT>FONTa11</FONT>
+	</ZEDIT>
+	<ICONBUTTON item="Shop_ItemSearchBarInitButton" parent="Shop">
+		<BOUNDS>
+			<X>674</X>
+			<Y>173</Y>
+			<W>14</W>
+			<H>14</H>
+		</BOUNDS>
+		<BITMAP type="icon" state="base">Lobby_SearchDeleteOn.png</BITMAP>
+		<BITMAP type="icon" state="over">Lobby_SearchDeleteOver.png</BITMAP>
+		<ICONRECT>
+			<X>0</X>
+			<Y>0</Y>
+			<W>14</W>
+			<H>14</H>
+		</ICONRECT>
+		<OUTLINETHICKNESS>0</OUTLINETHICKNESS>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+	
+	<!-- COMBOBOX : 종류별로 보기 -->
+	<ZCOMBOBOX item="Shop_Filter" parent="Shop">
+		<BUTTONLOOK>ShopFillterListBoxButtonLook</BUTTONLOOK>
+		<LISTBOXLOOK>CustomListBoxLook</LISTBOXLOOK>
+		<FONT>FONTa11</FONT>
+		<TEXTCOLOR>
+			<R>250</R>
+			<G>250</G>
+			<B>250</B>
+		</TEXTCOLOR>
+		<TEXTALIGN>
+			<HALIGN>RIGHT</HALIGN>
+			<VALIGN>center</VALIGN>
+		</TEXTALIGN>
+		<BOUNDS>
+			<X>710</X>
+			<Y>163</Y>
+			<W>143</W>
+			<H>36</H>
+		</BOUNDS>
+		<LISTITEM selected="true">STR:UI_EQUIPMENT_LIST_01_20</LISTITEM><!--	기본 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_21</LISTITEM>				<!--	무게 낮은 순 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_22</LISTITEM>				<!--	무게 높은 순 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_23</LISTITEM>				<!--	딜레이 낮은 순 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_24</LISTITEM>				<!--	딜레이 높은 순 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_25</LISTITEM>				<!--	대미지 낮은 순 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_26</LISTITEM>				<!--	대미지 높은 순 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_27</LISTITEM>				<!--	방어력 낮은 순 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_28</LISTITEM>				<!--	방어력 높은 순 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_29</LISTITEM>				<!--	등급 낮은 순 -->
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_30</LISTITEM>				<!--	등급 높은 순 -->		
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_31</LISTITEM>				<!--	가격 낮은 순 -->		
+		<LISTITEM>STR:UI_EQUIPMENT_LIST_01_32</LISTITEM>				<!--	가격 높은 순 -->		
+		<ITEMHEIGHT>18</ITEMHEIGHT>
+		<DROPSIZE>400</DROPSIZE>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<LISTSOUNDCLICK>mouse_click</LISTSOUNDCLICK>
+	</ZCOMBOBOX>
+
+	<!-- BUTTON : 필터 버튼 -->
+	<BMBUTTON item="Shop_ItemFilter_Button" parent="Shop">
+		<BOUNDS>
+			<X>855</X>
+			<Y>163</Y>
+			<W>36</W>
+			<H>36</H>
+		</BOUNDS>
+		<BITMAP type="up">InvenFilterButton_Default.png</BITMAP>
+		<BITMAP type="over">InvenFilterButton_Over.png</BITMAP>
+		<BITMAP type="down">InvenFilterButton_Default.png</BITMAP>	
+		<STRETCH>true</STRETCH>		
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BMBUTTON>
+	
+	<FRAME item="Shop_ItemFilter_Frame" parent="Shop">
+		<FRAMELOOK>NullFrameLook</FRAMELOOK>
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>1920</W>
+			<H>1080</H>
+		</BOUNDS>
+		<TEXT></TEXT>
+		<TITLEBAR>false</TITLEBAR>
+		<RESIZABLE>false</RESIZABLE>
+		<MOVABLE>false</MOVABLE>
+		<FOCUSABLE>false</FOCUSABLE>
+		<VISIBLE>false</VISIBLE>
+		<FADEENABLE>false</FADEENABLE>
+	</FRAME>
+	
+	<PICTURE item="Shop_ItemFilter_BG" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>531</X>
+			<Y>265</Y>
+			<W>867</W>
+			<H>537</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>ReportBG.png</BITMAP>
+	</PICTURE>
+
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTb20b</FONT>
+		<TEXTCOLOR>
+			<R>199</R>
+			<G>199</G>
+			<B>199</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>531</X>
+			<Y>265</Y>
+			<W>867</W>
+			<H>93</H>
+		</BOUNDS>
+		<TEXTALIGN>
+			<HALIGN>center</HALIGN>
+			<VALIGN>center</VALIGN>
+		</TEXTALIGN>
+		<TEXT>STR:UI_EQUIPMENT_31</TEXT> <!-- 필터 편집 -->
+	</LABEL>
+	
+	<!--전체보기-->
+	<BUTTON item="Shop_ItemFilter_Grade_Button_0" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>591</X>
+			<Y>380</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>		
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>643</X>
+			<Y>383</Y>
+			<W>200</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_36</TEXT> <!-- Grade All -->
+	</LABEL>
+	
+	<!--베이직-->
+	<BUTTON item="Shop_ItemFilter_Grade_Button_1" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>591</X>
+			<Y>440</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>681</X>
+			<Y>443</Y>
+			<W>100</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_24</TEXT>
+	</LABEL>
+	<PICTURE item="Shop_ItemFilter_Grade" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>629</X>
+			<Y>433</Y>
+			<W>47</W>
+			<H>47</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>GradeIcon_Basic.png</BITMAP>
+	</PICTURE>
+	
+	<!--스탠다드-->
+	<BUTTON item="Shop_ItemFilter_Grade_Button_2" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>591</X>
+			<Y>480</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>681</X>
+			<Y>483</Y>
+			<W>100</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_25</TEXT>
+	</LABEL>
+	<PICTURE item="Shop_ItemFilter_Grade" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>629</X>
+			<Y>473</Y>
+			<W>47</W>
+			<H>47</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>GradeIcon_Standard.png</BITMAP>
+	</PICTURE>
+	
+	<!--인핸스드-->
+	<BUTTON item="Shop_ItemFilter_Grade_Button_3" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>591</X>
+			<Y>520</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>681</X>
+			<Y>523</Y>
+			<W>100</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_26</TEXT>
+	</LABEL>
+	<PICTURE item="Shop_ItemFilter_Grade" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>629</X>
+			<Y>513</Y>
+			<W>47</W>
+			<H>47</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>GradeIcon_Enhanced.png</BITMAP>
+	</PICTURE>
+	
+	<!--프로토타입-->
+	<BUTTON item="Shop_ItemFilter_Grade_Button_4" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>591</X>
+			<Y>560</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>681</X>
+			<Y>563</Y>
+			<W>100</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_27</TEXT>
+	</LABEL>
+	<PICTURE item="Shop_ItemFilter_Grade" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>629</X>
+			<Y>553</Y>
+			<W>47</W>
+			<H>47</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>GradeIcon_Prototype.png</BITMAP>
+	</PICTURE>
+	
+	<!--마스터피스-->
+	<BUTTON item="Shop_ItemFilter_Grade_Button_5" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>591</X>
+			<Y>600</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>681</X>
+			<Y>603</Y>
+			<W>150</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_28</TEXT>
+	</LABEL>
+	<PICTURE item="Shop_ItemFilter_Grade" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>629</X>
+			<Y>593</Y>
+			<W>47</W>
+			<H>47</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>GradeIcon_Masterpiece.png</BITMAP>
+	</PICTURE>
+	
+	<!--울트라-->
+	<BUTTON item="Shop_ItemFilter_Grade_Button_6" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>591</X>
+			<Y>640</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>681</X>
+			<Y>643</Y>
+			<W>100</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_29</TEXT>
+	</LABEL>
+	<PICTURE item="Shop_ItemFilter_Grade" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>629</X>
+			<Y>633</Y>
+			<W>47</W>
+			<H>47</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>GradeIcon_Ultra.png</BITMAP>
+	</PICTURE>
+	
+	<PICTURE item="Shop_Line" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>826</X>
+			<Y>380</Y>
+			<W>1</W>
+			<H>290</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>V_Line.png</BITMAP>
+	</PICTURE>
+	
+	<!--전체보기-->
+	<BUTTON item="Shop_ItemFilter_Currency_Button_0" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>865</X>
+			<Y>380</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>		
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>917</X>
+			<Y>383</Y>
+			<W>200</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_37</TEXT> <!-- 전체 -->
+	</LABEL>
+	
+	<!--BT-->
+	<BUTTON item="Shop_ItemFilter_Currency_Button_1" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>865</X>
+			<Y>440</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>955</X>
+			<Y>443</Y>
+			<W>100</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_32</TEXT> <!-- BT -->
+	</LABEL>
+	<PICTURE item="Shop_ItemFilter_BT" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>910</X>
+			<Y>443</Y>
+			<W>32</W>
+			<H>32</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>PurchaseGoodsIcon_BT.png</BITMAP>
+	</PICTURE>
+	
+	<!--ZC-->
+	<BUTTON item="Shop_ItemFilter_Currency_Button_2" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>865</X>
+			<Y>480</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>955</X>
+			<Y>483</Y>
+			<W>100</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_33</TEXT> <!-- ZC -->
+	</LABEL>
+	<PICTURE item="Shop_ItemFilter_ZC" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>910</X>
+			<Y>483</Y>
+			<W>32</W>
+			<H>32</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>PurchaseGoodsIcon_ZC.png</BITMAP>
+	</PICTURE>
+	
+	<PICTURE item="Shop_Line" parent="Shop_ItemFilter_Frame">
+		<BOUNDS>
+			<X>1100</X>
+			<Y>380</Y>
+			<W>1</W>
+			<H>290</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>V_Line.png</BITMAP>
+	</PICTURE>
+	
+	<!--전체보기-->
+	<BUTTON item="Shop_ItemFilter_Owned_Button_0" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>1139</X>
+			<Y>380</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>		
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>1191</X>
+			<Y>383</Y>
+			<W>200</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_38</TEXT> <!-- 전체 -->
+	</LABEL>
+			
+	<!--보유-->
+	<BUTTON item="Shop_ItemFilter_Owned_Button_1" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>1139</X>
+			<Y>440</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>1191</X>
+			<Y>443</Y>
+			<W>100</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_34</TEXT> <!-- Owned -->
+	</LABEL>
+	
+	<!--미보유-->
+	<BUTTON item="Shop_ItemFilter_Owned_Button_2" parent="Shop_ItemFilter_Frame">
+		<BUTTONLOOK>InvenFilterButtonLook</BUTTONLOOK>
+		<PUSHBUTTON/>
+		<SETCHECK/>
+		<BOUNDS>
+			<X>1139</X>
+			<Y>480</Y>
+			<W>30</W>
+			<H>30</H>
+		</BOUNDS>
+		<ALIGN>
+			<HALIGN>left</HALIGN>
+		</ALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	<LABEL item="Label" parent="Shop_ItemFilter_Frame">
+		<FONT>FONTa14</FONT>
+		<TEXTCOLOR>
+			<R>179</R>
+			<G>179</G>
+			<B>180</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>1191</X>
+			<Y>483</Y>
+			<W>150</W>
+			<H>30</H>
+		</BOUNDS>
+		<TEXT>STR:UI_EQUIPMENT_35</TEXT> <!-- Not Owned -->
+	</LABEL>
+	
+	<!-- BUTTON : 적용 버튼 -->
+	<BMBUTTON item="Shop_ItemFilter_Button_Setting" parent="Shop_ItemFilter_Frame">
+		<TEXTCOLOR>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>774</X>
+			<Y>688</Y>
+			<W>182</W>
+			<H>60</H>
+		</BOUNDS>
+		<STRETCH/>
+		<DEFAULTKEY>ENTER</DEFAULTKEY>
+		<TEXT>STR:UI_EQUIPMENT_30</TEXT> <!-- 적용 -->
+		<BITMAP type="up">HideOut_QuickStartButtonOn.png</BITMAP>
+		<BITMAP type="over">HideOut_QuickStartButtonOver.png</BITMAP>
+		<BITMAP type="down">HideOut_QuickStartButtonOff.png</BITMAP>
+		<BITMAP type="disable">HideOut_QuickStartButtonOff.png</BITMAP>
+		<FONT>FONTa17</FONT>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BMBUTTON>
+	
+	<!-- BUTTON : 취소 버튼 -->
+	<BMBUTTON item="Shop_ItemFilter_Button_Cancel" parent="Shop_ItemFilter_Frame">
+		<TEXTCOLOR>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>966</X>
+			<Y>688</Y>
+			<W>182</W>
+			<H>60</H>
+		</BOUNDS>
+		<STRETCH/>
+		<DEFAULTKEY>ESC</DEFAULTKEY>
+		<TEXT>STR:UI_SHOP_31</TEXT> <!-- 취소 -->
+		<BITMAP type="up">DeleteButton_ON.png</BITMAP>
+		<BITMAP type="over">DeleteButton_Over.png</BITMAP>
+		<BITMAP type="down">DeleteButton_OFF.png</BITMAP>
+		<BITMAP type="disable">DeleteButton_OFF.png</BITMAP>
+		<FONT>FONTa17</FONT>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BMBUTTON>
+
+	<!-- BUTTON : 할인 아이템 구입하기 버튼 -->	
+	<BUTTON item="DiscountItemBuyConfirmCaller" parent="Shop">
+	<BUTTONLOOK>DefaultButtonLook</BUTTONLOOK>
+		<BOUNDS>
+			<X>652</X>
+			<Y>454</Y>
+			<W>100</W>
+			<H>20</H>
+		</BOUNDS>
+		<TEXT>STR:UI_SHOP_03</TEXT> <!-- 구매(&amp;B) -->
+		<SOUNDCLICK>item_buy</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+	
+	<!-- BUTTON : 구입하기 버튼 -->	
+	<BUTTON item="BuyConfirmCaller" parent="Shop">
+	<BUTTONLOOK>DefaultButtonLook</BUTTONLOOK>
+		<BOUNDS>
+			<X>652</X>
+			<Y>454</Y>
+			<W>100</W>
+			<H>20</H>
+		</BOUNDS>
+		<TEXT>STR:UI_SHOP_03</TEXT> <!-- 구매(&amp;B) -->
+		<SOUNDCLICK>item_buy</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BUTTON>
+		
+	<!-- BUTTON : 캐쉬 아이템 선물 버튼 -->
+	<ICONBUTTON item="GiftCashItemConfirmCaller" parent="Shop">
+		<BOUNDS>
+			<X>1247</X>
+			<Y>989</Y>
+			<W>60</W>
+			<H>60</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">PresentButton_Default.png</BITMAP>
+		<BITMAP type="bg" state="over">PresentButton_Over.png</BITMAP>
+		<BITMAP type="icon" state="base">PresentIcon.png</BITMAP>
+		<ICONRECT>
+			<X>18</X>
+			<Y>17</Y>
+			<W>24</W>
+			<H>24</H>
+		</ICONRECT>
+		<OUTLINETHICKNESS>0</OUTLINETHICKNESS>
+		<SOUNDCLICK>item_buy</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>	
+		
+<!-- 선물(&amp;G) -->
+	<!-- BUTTON : 캐쉬 아이템 구매 버튼 -->	
+	<ICONBUTTON item="BuyCashItemConfirmCaller" parent="Shop">
+		<FONT>FONTb16b</FONT>
+		<BOUNDS>
+			<X>1327</X>
+			<Y>989</Y>
+			<W>374</W>
+			<H>60</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">HideOut_QuickStartButtonOn.png</BITMAP>
+		<BITMAP type="bg" state="over">HideOut_QuickStartButtonOver.png</BITMAP>
+		<BITMAP type="bg" state="disable">HideOut_QuickStartButtonOff.png</BITMAP>
+		<OUTLINETHICKNESS>0</OUTLINETHICKNESS>
+		<STRETCH/>
+		<DRAWTEXT>TRUE</DRAWTEXT>
+		<TEXT>STR:UI_SHOP_29</TEXT>
+		<TEXTRECT>
+			<X>0</X>
+			<Y>18</Y>
+			<W>374</W>
+			<H>24</H>
+		</TEXTRECT>
+		<SOUNDCLICK>item_buy</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+
+	<PICTURE item="Shop_CreditIcon" parent="Shop">
+		<BOUNDS>
+			<X>1453</X>
+			<Y>952</Y>
+			<W>24</W>
+			<H>24</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>MainTop_CashIcon.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_BountyIcon" parent="Shop">
+		<BOUNDS>
+			<X>1453</X>
+			<Y>952</Y>
+			<W>24</W>
+			<H>24</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>MainTop_BountyIcon.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_ZCoinIcon" parent="Shop">
+		<BOUNDS>
+			<X>1453</X>
+			<Y>952</Y>
+			<W>24</W>
+			<H>24</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>MainTop_ZCoinIcon.png</BITMAP>
+	</PICTURE>
+	
+	<LABEL item="Shop_PriceTextLabel" parent="Shop">
+		<BOUNDS>
+			<X>1485</X>
+			<Y>954</Y>
+			<W>200</W>
+			<H>18</H>
+		</BOUNDS>
+		<FONT>FONTa14</FONT>
+	</LABEL>
+
+<!-- 충전 버튼 -->
+	<ICONBUTTON item="Shop_CashChargeButton_0" parent="Shop">
+		<BOUNDS>
+			<X>53</X>
+			<Y>278</Y>
+			<W>290</W>
+			<H>610</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">PaymentBG.png</BITMAP>
+		<BITMAP type="bg" state="over">PaymentBG.png</BITMAP>
+		<BITMAP type="icon" state="base">PaymentCoin_01.png</BITMAP>
+		<ICONRECT>
+			<X>3</X>
+			<Y>152</Y>
+			<W>284</W>
+			<H>340</H>
+		</ICONRECT>
+		<COLOR type="edge">
+			<BASE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</BASE>
+			<OVER>
+				<R>43</R>
+				<G>245</G>
+				<B>218</B>
+			</OVER>
+			<DOWN>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DOWN>
+			<DISABLE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DISABLE>
+		</COLOR>
+		<DRAWTEXT>TRUE</DRAWTEXT>		
+		<TEXTRECT>
+			<X>0</X>
+			<Y>549</Y>
+			<W>290</W>
+			<H>61</H>
+		</TEXTRECT>
+		<FONT>FONTb16</FONT>
+		<EXTRARECT type="over">
+			<X>0</X>
+			<Y>43</Y>
+			<W>0</W>
+			<H>88</H>
+		</EXTRARECT>
+		<INDEX>0</INDEX>
+		<EXPANSION/>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+	
+	<ICONBUTTON item="Shop_CashChargeButton_1" parent="Shop">
+		<BOUNDS>
+			<X>359</X>
+			<Y>278</Y>
+			<W>290</W>
+			<H>610</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">PaymentBG.png</BITMAP>
+		<BITMAP type="bg" state="over">PaymentBG.png</BITMAP>
+		<BITMAP type="icon" state="base">PaymentCoin_02.png</BITMAP>
+		<ICONRECT>
+			<X>3</X>
+			<Y>152</Y>
+			<W>284</W>
+			<H>340</H>
+		</ICONRECT>
+		<COLOR type="edge">
+			<BASE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</BASE>
+			<OVER>
+				<R>43</R>
+				<G>245</G>
+				<B>218</B>
+			</OVER>
+			<DOWN>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DOWN>
+			<DISABLE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DISABLE>
+		</COLOR>
+		<DRAWTEXT>TRUE</DRAWTEXT>		
+		<TEXTRECT>
+			<X>0</X>
+			<Y>549</Y>
+			<W>290</W>
+			<H>61</H>
+		</TEXTRECT>
+		<FONT>FONTb16</FONT>
+		<EXTRARECT type="over">
+			<X>0</X>
+			<Y>43</Y>
+			<W>0</W>
+			<H>88</H>
+		</EXTRARECT>
+		<INDEX>1</INDEX>
+		<EXPANSION/>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+	
+	<ICONBUTTON item="Shop_CashChargeButton_2" parent="Shop">
+		<BOUNDS>
+			<X>665</X>
+			<Y>278</Y>
+			<W>290</W>
+			<H>610</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">PaymentBG.png</BITMAP>
+		<BITMAP type="bg" state="over">PaymentBG.png</BITMAP>
+		<BITMAP type="icon" state="base">PaymentCoin_03.png</BITMAP>
+		<ICONRECT>
+			<X>3</X>
+			<Y>152</Y>
+			<W>284</W>
+			<H>340</H>
+		</ICONRECT>
+		<COLOR type="edge">
+			<BASE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</BASE>
+			<OVER>
+				<R>43</R>
+				<G>245</G>
+				<B>218</B>
+			</OVER>
+			<DOWN>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DOWN>
+			<DISABLE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DISABLE>
+		</COLOR>
+		<DRAWTEXT>TRUE</DRAWTEXT>		
+		<TEXTRECT>
+			<X>0</X>
+			<Y>549</Y>
+			<W>290</W>
+			<H>61</H>
+		</TEXTRECT>
+		<FONT>FONTb16</FONT>
+		<EXTRARECT type="over">
+			<X>0</X>
+			<Y>43</Y>
+			<W>0</W>
+			<H>88</H>
+		</EXTRARECT>
+		<INDEX>2</INDEX>
+		<EXPANSION/>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+	
+	<ICONBUTTON item="Shop_CashChargeButton_3" parent="Shop">
+		<BOUNDS>
+			<X>971</X>
+			<Y>278</Y>
+			<W>290</W>
+			<H>610</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">PaymentBG.png</BITMAP>
+		<BITMAP type="bg" state="over">PaymentBG.png</BITMAP>
+		<BITMAP type="icon" state="base">PaymentCoin_04.png</BITMAP>
+		<ICONRECT>
+			<X>3</X>
+			<Y>152</Y>
+			<W>284</W>
+			<H>340</H>
+		</ICONRECT>
+		<COLOR type="edge">
+			<BASE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</BASE>
+			<OVER>
+				<R>43</R>
+				<G>245</G>
+				<B>218</B>
+			</OVER>
+			<DOWN>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DOWN>
+			<DISABLE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DISABLE>
+		</COLOR>
+		<DRAWTEXT>TRUE</DRAWTEXT>
+		<TEXTRECT>
+			<X>0</X>
+			<Y>549</Y>
+			<W>290</W>
+			<H>61</H>
+		</TEXTRECT>
+		<FONT>FONTb16</FONT>
+		<EXTRARECT type="over">
+			<X>0</X>
+			<Y>43</Y>
+			<W>0</W>
+			<H>88</H>
+		</EXTRARECT>
+		<INDEX>3</INDEX>
+		<EXPANSION/>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+
+	<ICONBUTTON item="Shop_CashChargeButton_4" parent="Shop">
+		<BOUNDS>
+			<X>1277</X>
+			<Y>278</Y>
+			<W>290</W>
+			<H>610</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">PaymentBG.png</BITMAP>
+		<BITMAP type="bg" state="over">PaymentBG.png</BITMAP>
+		<BITMAP type="icon" state="base">PaymentCoin_05.png</BITMAP>
+		<ICONRECT>
+			<X>3</X>
+			<Y>152</Y>
+			<W>284</W>
+			<H>340</H>
+		</ICONRECT>
+		<COLOR type="edge">
+			<BASE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</BASE>
+			<OVER>
+				<R>43</R>
+				<G>245</G>
+				<B>218</B>
+			</OVER>
+			<DOWN>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DOWN>
+			<DISABLE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DISABLE>
+		</COLOR>
+		<DRAWTEXT>TRUE</DRAWTEXT>		
+		<TEXTRECT>
+			<X>0</X>
+			<Y>549</Y>
+			<W>290</W>
+			<H>61</H>
+		</TEXTRECT>
+		<FONT>FONTb16</FONT>
+		<EXTRARECT type="over">
+			<X>0</X>
+			<Y>43</Y>
+			<W>0</W>
+			<H>88</H>
+		</EXTRARECT>
+		<INDEX>4</INDEX>
+		<EXPANSION/>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+	
+	<ICONBUTTON item="Shop_CashChargeButton_5" parent="Shop">
+		<BOUNDS>
+			<X>1583</X>
+			<Y>278</Y>
+			<W>290</W>
+			<H>610</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">PaymentBG.png</BITMAP>
+		<BITMAP type="bg" state="over">PaymentBG.png</BITMAP>
+		<BITMAP type="icon" state="base">PaymentCoin_06.png</BITMAP>
+		<ICONRECT>
+			<X>3</X>
+			<Y>152</Y>
+			<W>284</W>
+			<H>340</H>
+		</ICONRECT>
+		<COLOR type="edge">
+			<BASE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</BASE>
+			<OVER>
+				<R>43</R>
+				<G>245</G>
+				<B>218</B>
+			</OVER>
+			<DOWN>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DOWN>
+			<DISABLE>
+				<R>176</R>
+				<G>176</G>
+				<B>176</B>
+			</DISABLE>
+		</COLOR>
+		<DRAWTEXT>TRUE</DRAWTEXT>		
+		<TEXTRECT>
+			<X>0</X>
+			<Y>549</Y>
+			<W>290</W>
+			<H>61</H>
+		</TEXTRECT>
+		<FONT>FONTb16</FONT>
+		<EXTRARECT type="over">
+			<X>0</X>
+			<Y>43</Y>
+			<W>0</W>
+			<H>88</H>
+		</EXTRARECT>
+		<INDEX>5</INDEX>
+		<EXPANSION/>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+
+<!-- 상단 버튼 이펙트 -->
+	<PICTURE item="Shop_PaymentEffect_top_0" parent="Shop">
+		<BOUNDS>
+			<X>53</X>
+			<Y>32</Y>
+			<W>287</W>
+			<H>246</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Top.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_top_1" parent="Shop">
+		<BOUNDS>
+			<X>359</X>
+			<Y>32</Y>
+			<W>287</W>
+			<H>246</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Top.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_top_2" parent="Shop">
+		<BOUNDS>
+			<X>665</X>
+			<Y>32</Y>
+			<W>287</W>
+			<H>246</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Top.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_top_3" parent="Shop">
+		<BOUNDS>
+			<X>971</X>
+			<Y>32</Y>
+			<W>287</W>
+			<H>246</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Top.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_top_4" parent="Shop">
+		<BOUNDS>
+			<X>1277</X>
+			<Y>32</Y>
+			<W>287</W>
+			<H>246</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Top.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_top_5" parent="Shop">
+		<BOUNDS>
+			<X>1583</X>
+			<Y>32</Y>
+			<W>287</W>
+			<H>246</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Top.png</BITMAP>
+	</PICTURE>
+
+<!-- 하단 버튼 이펙트 -->
+	<PICTURE item="Shop_PaymentEffect_bottom_0" parent="Shop">
+		<BOUNDS>
+			<X>53</X>
+			<Y>866</Y>
+			<W>287</W>
+			<H>162</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Bottom.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_bottom_1" parent="Shop">
+		<BOUNDS>
+			<X>359</X>
+			<Y>866</Y>
+			<W>287</W>
+			<H>162</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Bottom.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_bottom_2" parent="Shop">
+		<BOUNDS>
+			<X>665</X>
+			<Y>866</Y>
+			<W>287</W>
+			<H>162</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Bottom.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_bottom_3" parent="Shop">
+		<BOUNDS>
+			<X>971</X>
+			<Y>866</Y>
+			<W>287</W>
+			<H>162</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Bottom.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_bottom_4" parent="Shop">
+		<BOUNDS>
+			<X>1277</X>
+			<Y>866</Y>
+			<W>287</W>
+			<H>162</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Bottom.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentEffect_bottom_5" parent="Shop">
+		<BOUNDS>
+			<X>1583</X>
+			<Y>866</Y>
+			<W>287</W>
+			<H>162</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PaymentEffect_Bottom.png</BITMAP>
+	</PICTURE>
+
+<!-- 작은 코인 아이콘 -->
+	<PICTURE item="Shop_PaymentECoin_0" parent="Shop">
+		<BOUNDS>
+			<X>141</X>
+			<Y>322</Y>
+			<W>44</W>
+			<H>44</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PurchaseGoodsIcon_C.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentECoin_1" parent="Shop">
+		<BOUNDS>
+			<X>437</X>
+			<Y>322</Y>
+			<W>44</W>
+			<H>44</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PurchaseGoodsIcon_C.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentECoin_2" parent="Shop">
+		<BOUNDS>
+			<X>734</X>
+			<Y>322</Y>
+			<W>44</W>
+			<H>44</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PurchaseGoodsIcon_C.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentECoin_3" parent="Shop">
+		<BOUNDS>
+			<X>1040</X>
+			<Y>322</Y>
+			<W>44</W>
+			<H>44</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PurchaseGoodsIcon_C.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentECoin_4" parent="Shop">
+		<BOUNDS>
+			<X>1346</X>
+			<Y>322</Y>
+			<W>44</W>
+			<H>44</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PurchaseGoodsIcon_C.png</BITMAP>
+	</PICTURE>
+	<PICTURE item="Shop_PaymentECoin_5" parent="Shop">
+		<BOUNDS>
+			<X>1652</X>
+			<Y>322</Y>
+			<W>44</W>
+			<H>44</H>
+		</BOUNDS>
+		<STRETCH/>
+		<VISIBLE>false</VISIBLE>
+		<BITMAP>PurchaseGoodsIcon_C.png</BITMAP>
+	</PICTURE>
+	
+<!-- 코인 가격 표시 -->
+	<LABEL item="Shop_PaymentPrice_0" parent="Shop">
+		<FONT>FONTb16</FONT>
+		<BOUNDS>
+			<X>191</X>
+			<Y>333</Y>
+			<W>150</W>
+			<H>20</H>
+		</BOUNDS>
+		<VISIBLE>false</VISIBLE>
+	</LABEL>
+	<LABEL item="Shop_PaymentPrice_1" parent="Shop">
+		<FONT>FONTb16</FONT>
+		<BOUNDS>
+			<X>487</X>
+			<Y>333</Y>
+			<W>150</W>
+			<H>20</H>
+		</BOUNDS>
+		<VISIBLE>false</VISIBLE>
+	</LABEL>
+	<LABEL item="Shop_PaymentPrice_2" parent="Shop">
+		<FONT>FONTb16</FONT>
+		<BOUNDS>
+			<X>784</X>
+			<Y>333</Y>
+			<W>150</W>
+			<H>20</H>
+		</BOUNDS>
+		<VISIBLE>false</VISIBLE>
+	</LABEL>
+	<LABEL item="Shop_PaymentPrice_3" parent="Shop">
+		<FONT>FONTb16</FONT>
+		<BOUNDS>
+			<X>1090</X>
+			<Y>333</Y>
+			<W>150</W>
+			<H>20</H>
+		</BOUNDS>
+		<VISIBLE>false</VISIBLE>
+	</LABEL>
+	<LABEL item="Shop_PaymentPrice_4" parent="Shop">
+		<FONT>FONTb16</FONT>
+		<BOUNDS>
+			<X>1396</X>
+			<Y>333</Y>
+			<W>150</W>
+			<H>20</H>
+		</BOUNDS>
+		<VISIBLE>false</VISIBLE>
+	</LABEL>
+	<LABEL item="Shop_PaymentPrice_5" parent="Shop">
+		<FONT>FONTb16</FONT>
+		<BOUNDS>
+			<X>1702</X>
+			<Y>333</Y>
+			<W>150</W>
+			<H>20</H>
+		</BOUNDS>
+		<VISIBLE>false</VISIBLE>
+	</LABEL>
+	
+	
+	<ZRICHTOOLTIP item="Shop_Tooltip" parent="Shop">
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>391</W>
+			<H>362</H>
+		</BOUNDS>
+		<BITMAP type="bg">LeagueRuleTooltip.png</BITMAP>
+		<COLOR type="textcolor">
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>
+		<COLOR type="textcolor">
+			<R>225</R>
+			<G>225</G>
+			<B>225</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>
+		<COLOR type="textcolor">
+			<R>207</R>
+			<G>207</G>
+			<B>207</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>
+		<COLOR type="textcolor">
+			<R>148</R>
+			<G>148</G>
+			<B>148</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>
+		<COLOR type="textcolor">
+			<R>61</R>
+			<G>196</G>
+			<B>176</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>		
+		<COLOR type="textcolor">
+			<R>255</R>
+			<G>0</G>
+			<B>0</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>		
+		<ADDITEM item="GradeSlot" idx="0">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>90</H>
+			</RECT>		
+			<BITMAP type="Grade" state="0">GradePannel_White.png</BITMAP>
+			<BITMAP type="Grade" state="1">GradePannel_Blue.png</BITMAP>
+			<BITMAP type="Grade" state="2">GradePannel_Yellow.png</BITMAP>
+			<BITMAP type="Grade" state="3">GradePannel_Orange.png</BITMAP>
+			<BITMAP type="Grade" state="4">GradePannel_Purple.png</BITMAP>
+			<BITMAP type="Grade" state="5">GradePannel_Red.png</BITMAP>
+			<RECT type="bitmaprect">
+				<X>1</X>
+				<Y>1</Y>
+				<W>389</W>
+				<H>89</H>
+			</RECT>
+			<BITMAP type="gender" state="0">MaleIcon.png</BITMAP>
+			<BITMAP type="gender" state="1">FeMaleIcon.png</BITMAP>
+			<RECT type="genderrect">
+				<X>350</X>
+				<Y>17</Y>
+				<W>26</W>
+				<H>26</H>
+			</RECT>			
+			<TEXTINFO idx="0" font="FONTb19b" alignment="left" textcolor="0">
+				<X>10</X>
+				<Y>14</Y>
+				<W>320</W>
+				<H>25</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa14" alignment="left" textcolor="2">
+				<X>10</X>
+				<Y>57</Y>
+				<W>150</W>
+				<H>18</H>
+			</TEXTINFO>
+			<TEXTINFO idx="2" font="FONTa14" alignment="right" textcolor="0">
+				<X>223</X>
+				<Y>57</Y>
+				<W>150</W>
+				<H>18</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="RemainingSlot" idx="1">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>60</H>
+			</RECT>
+			<BITMAP type="icon">RemainingTimeIcon.png</BITMAP>
+			<RECT type="iconrect">
+				<X>14</X>
+				<Y>16</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_08" textcolor="3">
+				<X>40</X>
+				<Y>18</Y>
+				<W>100</W>
+				<H>19</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa14" alignment="right" textcolor="3">
+				<X>174</X>
+				<Y>18</Y>
+				<W>200</W>
+				<H>19</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="MainAbilitySlot" idx="2">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>102</H>
+			</RECT>
+			<BITMAP type="icon">Ingame_BulletIcon.png</BITMAP>
+			<BITMAP type="icon">StatIcon_WT.png</BITMAP>
+			<RECT type="iconrect">
+				<X>343</X>
+				<Y>41</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>
+			<RECT type="iconrect">
+				<X>274</X>
+				<Y>65</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>					
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_01" textcolor="3">
+				<X>18</X>
+				<Y>15</Y>
+				<W>200</W>
+				<H>20</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTb21b" alignment="left" textcolor="1">
+				<X>18</X>
+				<Y>45</Y>
+				<W>100</W>
+				<H>33</H>
+			</TEXTINFO>
+			<TEXTINFO idx="2" font="FONTa14" alignment="right" textcolor="0">
+				<X>274</X>
+				<Y>43</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="3" font="FONTa14" alignment="right" textcolor="0">
+				<X>343</X>
+				<Y>67</Y>
+				<W>31</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="4" font="FONTa14" alignment="right" textcolor="3">
+				<X>274</X>
+				<Y>15</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="SubAbilitySlot" idx="3">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>126</H>
+			</RECT>
+			<RECT type="linerect">
+				<X>10</X>
+				<Y>0</Y>
+				<W>374</W>
+				<H>1</H>
+			</RECT>
+			<BITMAP type="icon">StatIcon_Delay.png</BITMAP>
+			<BITMAP type="icon">StatIcon_HP.png</BITMAP>
+			<BITMAP type="icon">StatIcon_AP.png</BITMAP>
+			<BITMAP type="icon">StatIcon_WT.png</BITMAP>
+			<RECT type="iconrect">
+				<X>18</X>
+				<Y>12</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>
+			<RECT type="iconrect">
+				<X>18</X>
+				<Y>54</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>
+			<RECT type="iconrect">
+				<X>18</X>
+				<Y>95</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>			
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_02" textcolor="3">
+				<X>54</X>
+				<Y>12</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_03" textcolor="3">
+				<X>54</X>
+				<Y>54</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="2" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_04" textcolor="3">
+				<X>54</X>
+				<Y>95</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="3" font="FONTa14" alignment="right" textcolor="3">
+				<X>313</X>
+				<Y>12</Y>
+				<W>60</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="4" font="FONTa14" alignment="right" textcolor="3">
+				<X>313</X>
+				<Y>54</Y>
+				<W>60</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="5" font="FONTa14" alignment="right" textcolor="3">
+				<X>313</X>
+				<Y>95</Y>
+				<W>60</W>
+				<H>15</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="InfoSlot" idx="4">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>132</H>
+			</RECT>			
+			<RECT type="bitmaprect">
+				<X>10</X>
+				<Y>12</Y>
+				<W>374</W>
+				<H>24</H>
+			</RECT>
+			<BITMAP type="bg">ItemSubtitle.png</BITMAP>
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_05" textcolor="0">
+				<X>18</X>
+				<Y>16</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa11" alignment="top" textcolor="3">
+				<X>18</X>
+				<Y>47</Y>
+				<W>348</W>
+				<H>86</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="AddEffectSlot" idx="5">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>139</H>
+			</RECT>
+			<RECT type="bitmaprect">
+				<X>10</X>
+				<Y>12</Y>
+				<W>374</W>
+				<H>24</H>
+			</RECT>
+			<BITMAP type="bg">ItemSubtitle.png</BITMAP>
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_06" textcolor="0">
+				<X>18</X>
+				<Y>15</Y>
+				<W>250</W>
+				<H>17</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa14" alignment="left" textcolor="4">
+				<X>18</X>
+				<Y>54</Y>
+				<W>76</W>
+				<H>18</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<GRADIENTLINEARPROGRESSBAR item="PeriodProgressBar"  parent="Shop_Tooltip">
+			<BOUNDS>
+				<X>18</X>
+				<Y>136</Y>
+				<W>355</W> 
+				<H>4</H>
+			</BOUNDS>
+			<FILLCOLOR> <!-- 0 -->
+				<INDEX>0</INDEX>
+				<BEGIN>
+					<R>235</R>
+					<G>235</G>
+					<B>235</B>
+				</BEGIN>
+				<END>
+					<R>235</R>
+					<G>235</G>
+					<B>235</B>
+				</END>
+			</FILLCOLOR>
+			<EMPTYCOLOR>
+				<R>49</R>
+				<G>53</G>
+				<B>54</B>
+				<ALPHA>255</ALPHA>
+			</EMPTYCOLOR>
+			<LEANDIRECTION>0</LEANDIRECTION>
+			<OUTLINETHICKNESS>0</OUTLINETHICKNESS>
+		</GRADIENTLINEARPROGRESSBAR>
+	</ZRICHTOOLTIP>
+	
+	<!-- FRAME : 상점에서 캐쉬 아이템 구매시 세부 선택을 결정하도록 하는 창 (기간이나 묶음 갯수 등) -->
+	<FRAME item="BuyItemDetailFrame">
+		<FRAMELOOK>NullFrameLook</FRAMELOOK>
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>1920</W>
+			<H>1080</H>
+		</BOUNDS>		
+		<VISIBLE>false</VISIBLE>
+		<RESIZABLE>false</RESIZABLE>
+		<FADEENABLE>false</FADEENABLE>
+	</FRAME>
+	
+	<!-- PICTURE : 팝업창 배경 이미지 -->
+	<PICTURE item ="BuyItemDetailFrame_Background" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>570</X>
+			<Y>326</Y>
+			<W>781</W>
+			<H>429</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>PurchaseWnd.png</BITMAP>
+	</PICTURE>
+		
+	<!-- ITEMSLOT -->
+	<ITEMSLOT item="BuyItemDetailFrame_ItemSlot" parent="BuyItemDetailFrame" parts="head">
+		<BOUNDS>
+			<X>716</X>
+			<Y>462</Y>
+			<W>240</W>
+			<H>120</H>
+		</BOUNDS>
+		<STRETCH/>
+	</ITEMSLOT>
+		
+	<!-- PICTURE : 팝업창 배경 이미지 -->
+	<PICTURE item ="BuyItemDetailFrame_Divider" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>1000</X>
+			<Y>461</Y>
+			<W>2</W>
+			<H>120</H>
+		</BOUNDS>
+		<STRETCH/>
+		<BITMAP>VerticalDivider.png</BITMAP>
+	</PICTURE>
+	
+	<ZGBUTTON item="BuyItemDetailFrame_PeriodButton_0" parent="BuyItemDetailFrame">
+		<BUTTONLOOK>ShopPeriodButtonLook</BUTTONLOOK>
+		<BOUNDS>
+			<X>1043</X>
+			<Y>464</Y>
+			<W>19</W>
+			<H>19</H>
+		</BOUNDS>
+		<PUSHBUTTON/>
+		<STRETCH/>
+		<TEXT></TEXT>
+		<GROUP>Shop_Period</GROUP>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ZGBUTTON>
+	
+	<ZGBUTTON item="BuyItemDetailFrame_PeriodButton_1" parent="BuyItemDetailFrame">
+		<BUTTONLOOK>ShopPeriodButtonLook</BUTTONLOOK>
+		<BOUNDS>
+			<X>1043</X>
+			<Y>495</Y>
+			<W>19</W>
+			<H>19</H>
+		</BOUNDS>
+		<STRETCH/>
+		<TEXT></TEXT>
+		<GROUP>Shop_Period</GROUP>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ZGBUTTON>
+	
+	<ZGBUTTON item="BuyItemDetailFrame_PeriodButton_2" parent="BuyItemDetailFrame">
+		<BUTTONLOOK>ShopPeriodButtonLook</BUTTONLOOK>
+		<BOUNDS>
+			<X>1043</X>
+			<Y>527</Y>
+			<W>19</W>
+			<H>19</H>
+		</BOUNDS>
+		<STRETCH/>
+		<TEXT></TEXT>
+		<GROUP>Shop_Period</GROUP>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ZGBUTTON>
+	
+	<ZGBUTTON item="BuyItemDetailFrame_PeriodButton_3" parent="BuyItemDetailFrame">
+		<BUTTONLOOK>ShopPeriodButtonLook</BUTTONLOOK>
+		<BOUNDS>
+			<X>1043</X>
+			<Y>560</Y>
+			<W>19</W>
+			<H>19</H>
+		</BOUNDS>
+		<STRETCH/>
+		<TEXT></TEXT>
+		<GROUP>Shop_Period</GROUP>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ZGBUTTON>
+	
+	<LABEL item="BuyItemDetailFrame_PeriodLabel_0" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>1071</X>
+			<Y>465</Y>
+			<W>200</W>
+			<H>20</H>
+		</BOUNDS>
+		<TEXTCOLOR>
+			<R>199</R>
+			<G>199</G>
+			<B>199</B>
+		</TEXTCOLOR>
+		<FONT>FONTa11</FONT>
+	</LABEL>
+
+	<LABEL item="BuyItemDetailFrame_PeriodLabel_1" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>1071</X>
+			<Y>495</Y>
+			<W>200</W>
+			<H>20</H>
+		</BOUNDS>
+		<TEXTCOLOR>
+			<R>199</R>
+			<G>199</G>
+			<B>199</B>
+		</TEXTCOLOR>
+		<FONT>FONTa11</FONT>
+	</LABEL>
+
+	<LABEL item="BuyItemDetailFrame_PeriodLabel_2" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>1071</X>
+			<Y>527</Y>
+			<W>200</W>
+			<H>20</H>
+		</BOUNDS>
+		<TEXTCOLOR>
+			<R>199</R>
+			<G>199</G>
+			<B>199</B>
+		</TEXTCOLOR>
+		<FONT>FONTa11</FONT>
+	</LABEL>
+
+	<LABEL item="BuyItemDetailFrame_PeriodLabel_3" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>1071</X>
+			<Y>560</Y>
+			<W>300</W>
+			<H>20</H>
+		</BOUNDS>
+		<TEXTCOLOR>
+			<R>199</R>
+			<G>199</G>
+			<B>199</B>
+		</TEXTCOLOR>
+		<FONT>FONTa11</FONT>
+	</LABEL>	
+	
+	<!-- LABEL : 선물할 상대의 캐릭터명 -->
+	<LABEL item="BuyItemDetailFrame_GiftTargetNameLabel" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>574</X>
+			<Y>390</Y>
+			<W>200</W>
+			<H>20</H>
+		</BOUNDS>
+		<MAXLENGTH></MAXLENGTH>
+		<TEXTALIGN>
+			<HALIGN>left</HALIGN>
+		</TEXTALIGN>
+		<TEXT>STR:UI_SHOP_35</TEXT>
+	</LABEL>
+		
+	<ZEDIT item="BuyItemDetailFrame_GiftTargetName" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>524</X>
+			<Y>421</Y>
+			<W>249</W>
+			<H>37</H>
+		</BOUNDS>
+		<GUIDETEXT>STR:UI_SHOP_47</GUIDETEXT>
+		<MAXLENGTH>32</MAXLENGTH>
+		<COLOR type="frame">
+			<R>13</R>
+			<G>15</G>
+			<B>16</B>
+			<A>255</A>
+		</COLOR>
+		<FONT>FONTa11</FONT>
+		<ONLYENGLISHNUMBER>true</ONLYENGLISHNUMBER>
+	</ZEDIT>
+	
+	<!-- LABEL : 보낼 메시지 -->
+	<LABEL item="BuyItemDetailFrame_GiftMessageLabel" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>609</X>
+			<Y>492</Y>
+			<W>100</W>
+			<H>20</H>
+		</BOUNDS>
+		<TEXTALIGN>
+			<HALIGN>left</HALIGN>
+		</TEXTALIGN>
+		<TEXT>STR:UI_SHOP_36</TEXT>
+	</LABEL>
+	
+	<!-- EDIT : 보낼 메시지 -->
+	<ZEDIT item="BuyItemDetailFrame_GiftMessage" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>524</X>
+			<Y>523</Y>
+			<W>249</W>
+			<H>117</H>
+		</BOUNDS>
+		<GUIDETEXT>STR:UI_SHOP_48</GUIDETEXT>
+		<MAXLENGTH>128</MAXLENGTH>
+		<WRAPTEXT/>
+		<COLOR type="frame">
+			<R>13</R>
+			<G>15</G>
+			<B>16</B>
+			<A>255</A>
+		</COLOR>
+		<FONT>FONTa11</FONT>
+	</ZEDIT>
+				
+	<!-- Button : 구입 버튼 -->
+	<ICONBUTTON item="BuyItemDetailFrame_Buy" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>840</X>
+			<Y>630</Y>
+			<W>241</W>
+			<H>60</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">PurchaseButton_Default.png</BITMAP>
+		<BITMAP type="bg" state="over">PurchaseButton_Over.png</BITMAP>
+		<DRAWTEXT>TRUE</DRAWTEXT>
+		<OUTLINETHICKNESS>0</OUTLINETHICKNESS>
+		<TEXTRECT>
+			<X>120</X>
+			<Y>20</Y>
+			<W>200</W>
+			<H>20</H>
+		</TEXTRECT>
+		<FONT>FONTb16b</FONT>
+		<TEXTALIGN>
+			<HALIGN>LEFT</HALIGN>
+			<VALIGN>CENTER</VALIGN>
+		</TEXTALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+	
+	<!-- Button : 선물 버튼 -->
+	<ICONBUTTON item="BuyItemDetailFrame_Gift" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>833</X>
+			<Y>678</Y>
+			<W>241</W>
+			<H>60</H>
+		</BOUNDS>
+		<BITMAP type="bg" state="base">PurchaseButton_Default.png</BITMAP>
+		<BITMAP type="bg" state="over">PurchaseButton_Over.png</BITMAP>
+		<DRAWTEXT>TRUE</DRAWTEXT>		
+		<TEXTRECT>
+			<X>120</X>
+			<Y>20</Y>
+			<W>200</W>
+			<H>20</H>
+		</TEXTRECT>
+		<FONT>FONTb16b</FONT>
+		<TEXTALIGN>
+			<HALIGN>LEFT</HALIGN>
+			<VALIGN>CENTER</VALIGN>
+		</TEXTALIGN>
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</ICONBUTTON>
+	<!-- 선물(&amp;G) -->
+	
+	<!-- Button : 취소 버튼 -->
+	<BMBUTTON item="BuyItemDetailFrame_Cancel" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>1272</X>
+			<Y>355</Y>
+			<W>46</W>
+			<H>46</H>
+		</BOUNDS>
+		<BITMAP type="up">ResultCloseButton_Default.png</BITMAP>
+		<BITMAP type="over">ResultCloseButton_Over.png</BITMAP>
+		<BITMAP type="down">ResultCloseButton_Default.png</BITMAP>
+		<DEFAULTKEY>ESC</DEFAULTKEY>
+		<STRETCH/>	
+		<SOUNDCLICK>mouse_click</SOUNDCLICK>
+		<SOUNDOVER>mouse_over</SOUNDOVER>
+	</BMBUTTON>
+
+	<PICTURE item="BuyItemDetailFrame_BountyIcon" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>920</X>
+			<Y>644</Y>
+			<W>34</W>
+			<H>34</H>
+		</BOUNDS>
+		<BITMAP>PurchaseGoodsIcon_BT.png</BITMAP>
+		<VISIBLE>false</VISIBLE>
+		<STRETCH/>
+	</PICTURE>
+	
+	<PICTURE item="BuyItemDetailFrame_CashIcon" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>920</X>
+			<Y>644</Y>
+			<W>34</W>
+			<H>34</H>
+		</BOUNDS>
+		<BITMAP>PurchaseGoodsIcon_C.png</BITMAP>
+		<VISIBLE>false</VISIBLE>
+		<STRETCH/>
+	</PICTURE>
+	
+	<PICTURE item="BuyItemDetailFrame_ZCIcon" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>920</X>
+			<Y>644</Y>
+			<W>34</W>
+			<H>34</H>
+		</BOUNDS>
+		<BITMAP>PurchaseGoodsIcon_ZC.png</BITMAP>
+		<VISIBLE>false</VISIBLE>
+		<STRETCH/>
+	</PICTURE>
+	
+	<ZRICHTOOLTIP item="BuyItemDetailFrame_Tooltip" parent="BuyItemDetailFrame">
+		<BOUNDS>
+			<X>0</X>
+			<Y>0</Y>
+			<W>391</W>
+			<H>362</H>
+		</BOUNDS>
+		<BITMAP type="bg">LeagueRuleTooltip.png</BITMAP>
+		<COLOR type="textcolor">
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>
+		<COLOR type="textcolor">
+			<R>225</R>
+			<G>225</G>
+			<B>225</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>
+		<COLOR type="textcolor">
+			<R>207</R>
+			<G>207</G>
+			<B>207</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>
+		<COLOR type="textcolor">
+			<R>148</R>
+			<G>148</G>
+			<B>148</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>
+		<COLOR type="textcolor">
+			<R>61</R>
+			<G>196</G>
+			<B>176</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>
+		<COLOR type="textcolor">
+			<R>200</R>
+			<G>0</G>
+			<B>0</B>
+			<ALPHA>255</ALPHA>
+		</COLOR>		
+		<ADDITEM item="GradeSlot" idx="0">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>90</H>
+			</RECT>		
+			<BITMAP type="Grade" state="0">GradePannel_White.png</BITMAP>
+			<BITMAP type="Grade" state="1">GradePannel_Blue.png</BITMAP>
+			<BITMAP type="Grade" state="2">GradePannel_Yellow.png</BITMAP>
+			<BITMAP type="Grade" state="3">GradePannel_Orange.png</BITMAP>
+			<BITMAP type="Grade" state="4">GradePannel_Purple.png</BITMAP>
+			<BITMAP type="Grade" state="5">GradePannel_Red.png</BITMAP>
+			<RECT type="bitmaprect">
+				<X>1</X>
+				<Y>1</Y>
+				<W>389</W>
+				<H>89</H>
+			</RECT>
+			<BITMAP type="gender" state="0">MaleIcon.png</BITMAP>
+			<BITMAP type="gender" state="1">FeMaleIcon.png</BITMAP>
+			<RECT type="genderrect">
+				<X>350</X>
+				<Y>17</Y>
+				<W>26</W>
+				<H>26</H>
+			</RECT>			
+			<TEXTINFO idx="0" font="FONTb19b" alignment="left" textcolor="0">
+				<X>10</X>
+				<Y>14</Y>
+				<W>350</W>
+				<H>25</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa14" alignment="left" textcolor="2">
+				<X>10</X>
+				<Y>57</Y>
+				<W>150</W>
+				<H>18</H>
+			</TEXTINFO>
+			<TEXTINFO idx="2" font="FONTa14" alignment="right" textcolor="0">
+				<X>223</X>
+				<Y>57</Y>
+				<W>150</W>
+				<H>18</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="RemainingSlot" idx="1">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>60</H>
+			</RECT>
+			<BITMAP type="icon">RemainingTimeIcon.png</BITMAP>
+			<RECT type="iconrect">
+				<X>14</X>
+				<Y>16</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_08" textcolor="3">
+				<X>40</X>
+				<Y>18</Y>
+				<W>100</W>
+				<H>19</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa14" alignment="right" textcolor="3">
+				<X>174</X>
+				<Y>18</Y>
+				<W>200</W>
+				<H>19</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="MainAbilitySlot" idx="2">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>102</H>
+			</RECT>
+			<BITMAP type="icon">Ingame_BulletIcon.png</BITMAP>
+			<BITMAP type="icon">StatIcon_WT.png</BITMAP>
+			<RECT type="iconrect">
+				<X>343</X>
+				<Y>41</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>
+			<RECT type="iconrect">
+				<X>274</X>
+				<Y>65</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>					
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_01" textcolor="3">
+				<X>18</X>
+				<Y>15</Y>
+				<W>200</W>
+				<H>20</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTb21b" alignment="left" textcolor="1">
+				<X>18</X>
+				<Y>45</Y>
+				<W>100</W>
+				<H>33</H>
+			</TEXTINFO>
+			<TEXTINFO idx="2" font="FONTa14" alignment="right" textcolor="0">
+				<X>274</X>
+				<Y>43</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="3" font="FONTa14" alignment="right" textcolor="0">
+				<X>343</X>
+				<Y>67</Y>
+				<W>31</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="4" font="FONTa14" alignment="right" textcolor="3">
+				<X>274</X>
+				<Y>15</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="SubAbilitySlot" idx="3">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>126</H>
+			</RECT>
+			<RECT type="linerect">
+				<X>10</X>
+				<Y>0</Y>
+				<W>374</W>
+				<H>1</H>
+			</RECT>
+			<BITMAP type="icon">StatIcon_Delay.png</BITMAP>
+			<BITMAP type="icon">StatIcon_HP.png</BITMAP>
+			<BITMAP type="icon">StatIcon_AP.png</BITMAP>
+			<BITMAP type="icon">StatIcon_AP.png</BITMAP>
+			<RECT type="iconrect">
+				<X>18</X>
+				<Y>12</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>
+			<RECT type="iconrect">
+				<X>18</X>
+				<Y>54</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>
+			<RECT type="iconrect">
+				<X>18</X>
+				<Y>95</Y>
+				<W>21</W>
+				<H>21</H>
+			</RECT>			
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_02" textcolor="3">
+				<X>54</X>
+				<Y>12</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_03" textcolor="3">
+				<X>54</X>
+				<Y>54</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="2" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_04" textcolor="3">
+				<X>54</X>
+				<Y>95</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="3" font="FONTa14" alignment="right" textcolor="3">
+				<X>313</X>
+				<Y>12</Y>
+				<W>60</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="4" font="FONTa14" alignment="right" textcolor="3">
+				<X>313</X>
+				<Y>54</Y>
+				<W>60</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="5" font="FONTa14" alignment="right" textcolor="3">
+				<X>313</X>
+				<Y>95</Y>
+				<W>60</W>
+				<H>15</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="InfoSlot" idx="4">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>132</H>
+			</RECT>			
+			<RECT type="bitmaprect">
+				<X>10</X>
+				<Y>12</Y>
+				<W>374</W>
+				<H>24</H>
+			</RECT>
+			<BITMAP type="bg">ItemSubtitle.png</BITMAP>
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_05" textcolor="0">
+				<X>18</X>
+				<Y>16</Y>
+				<W>100</W>
+				<H>15</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa11" alignment="top" textcolor="3">
+				<X>18</X>
+				<Y>47</Y>
+				<W>348</W>
+				<H>86</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<ADDITEM item="AddEffectSlot" idx="5">
+			<RECT type="slotrect">
+				<X>0</X>
+				<Y>0</Y>
+				<W>391</W>
+				<H>139</H>
+			</RECT>
+			<RECT type="bitmaprect">
+				<X>10</X>
+				<Y>12</Y>
+				<W>374</W>
+				<H>24</H>
+			</RECT>
+			<BITMAP type="bg">ItemSubtitle.png</BITMAP>
+			<TEXTINFO idx="0" font="FONTa14" alignment="left" title="STR:UI_EQUIPMENT_TOOLTIP_06" textcolor="0">
+				<X>18</X>
+				<Y>15</Y>
+				<W>250</W>
+				<H>17</H>
+			</TEXTINFO>
+			<TEXTINFO idx="1" font="FONTa14" alignment="left" textcolor="4">
+				<X>18</X>
+				<Y>54</Y>
+				<W>76</W>
+				<H>18</H>
+			</TEXTINFO>
+		</ADDITEM>
+		<GRADIENTLINEARPROGRESSBAR item="PeriodProgressBar"  parent="Shop_Tooltip">
+			<BOUNDS>
+				<X>18</X>
+				<Y>136</Y>
+				<W>355</W> 
+				<H>4</H>
+			</BOUNDS>
+			<FILLCOLOR> <!-- 0 -->
+				<INDEX>0</INDEX>
+				<BEGIN>
+					<R>235</R>
+					<G>235</G>
+					<B>235</B>
+				</BEGIN>
+				<END>
+					<R>235</R>
+					<G>235</G>
+					<B>235</B>
+				</END>
+			</FILLCOLOR>
+			<EMPTYCOLOR>
+				<R>49</R>
+				<G>53</G>
+				<B>54</B>
+				<ALPHA>255</ALPHA>
+			</EMPTYCOLOR>
+			<LEANDIRECTION>0</LEANDIRECTION>
+			<OUTLINETHICKNESS>0</OUTLINETHICKNESS>
+		</GRADIENTLINEARPROGRESSBAR>
+	</ZRICHTOOLTIP>
+</XML>
